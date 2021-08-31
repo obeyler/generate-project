@@ -3,7 +3,17 @@ entries:
   generate-project:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-08-31T15:35:16.513890699+02:00"
+    created: "2021-08-31T17:19:14.013113804+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 3280001e088485100327fbd05e4c25afe280b927d01ff5cd30cc928afef6a8a5
+    name: generate-project
+    type: application
+    urls:
+    - generate-project-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-08-31T17:19:14.012956206+02:00"
     description: A Helm chart for Kubernetes
     digest: e47d3142666719f00eb92a9256a57875045607975b2fced6413a3be086751b66
     name: generate-project
@@ -11,4 +21,4 @@ entries:
     urls:
     - generate-project-0.1.0.tgz
     version: 0.1.0
-generated: "2021-08-31T15:35:16.513625968+02:00"
+generated: "2021-08-31T17:19:14.012675991+02:00"

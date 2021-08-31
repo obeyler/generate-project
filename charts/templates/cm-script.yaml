@@ -7,19 +7,14 @@ data:
     echo "begin script"
     data='{ "project_name": "{{ .Values.project }}", "public": false, "storage_limit": {{ .Values.storage_limit }} }'
     echo "data=$data"
-    cmd='curl -u $ADMIN_USER:$ADMIN_PASSWORD -i -k \
-                      -X POST {{ .Values.server.url }}/api/v2.0/projects \
-                      -H  "Content-Type: application/json"\
-                      -d "$data"'
-    echo "${cmd}"
-    response=$(curl -u $ADMIN_USER:$ADMIN_PASSWORD -i -k \
+    response=$(curl -s -u $ADMIN_USER:$ADMIN_PASSWORD -i -k \
                             -X POST {{ .Values.server.url }}/api/v2.0/projects \
                             -H  "Content-Type: application/json"\
                             -d "$data")
     echo "result of create project : $response"
-    data='{"role_id": 1, "member_group": {  "group_name":  "/{{ .Values.project }}-owner", "group_type": 3 }}'
+    data='{"role_id": 1, "member_group": {  "group_name":  "/g-{{ .Values.project }}-owner", "group_type": 3 }}'
 
-    response=$(curl -u $ADMIN_USER:$ADMIN_PASSWORD -i -k \
+    response=$(curl -s -u $ADMIN_USER:$ADMIN_PASSWORD -i -k \
              -X POST {{ .Values.server.url }}/api/v2.0/projects/{{ .Values.project }}/members \
              -H  "Content-Type: application/json"\
              -d "$data")
